@@ -29,12 +29,13 @@
 ## 图片展示
 
 <p>
-  <img src="webapp/static/profile/account.jpg" alt="账户与盈亏记录" width="360" />
-  <img src="webapp/static/profile/orders.jpg" alt="历史委托记录" width="360" />
+  <img src="webapp/static/readme/push-hero.png" alt="网站首页实时总览" width="760" />
 </p>
 <p>
-  <img src="webapp/static/profile/contract.jpg" alt="合约收益记录" width="360" />
-  <img src="webapp/static/profile/wechat.jpg" alt="交流联系方式" width="360" />
+  <img src="webapp/static/readme/push-middle.png" alt="策略说明与信号快照区域" width="760" />
+</p>
+<p>
+  <img src="webapp/static/readme/push-table.png" alt="实时信号流与脚本日志区域" width="760" />
 </p>
 
 ## 项目结构
