@@ -23,7 +23,6 @@ __pycache__/
 
 # 运行时配置目录
 .guanlan/
-webapp/static/profile/
 
 # 数据文件
 examples/data/
