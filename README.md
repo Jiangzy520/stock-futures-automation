@@ -19,7 +19,6 @@
 - [环境准备：下载 VS Code 并安装 Codex 扩展](./docs/VSCODE_CODEX_SETUP.md)
 - [股票、期货实时数据获取说明](./docs/STOCK_FUTURES_REALTIME_DATA.md)
 - [股票、期货模拟盘账号与接口说明](./docs/STOCK_FUTURES_SIM_ACCOUNT_INTERFACES.md)
-- [多源数据输入说明](./docs/MARKET_DATA_INPUTS.md)
 
 ## 目录说明
 
@@ -31,7 +30,6 @@ docs/
   VSCODE_CODEX_SETUP.md
   STOCK_FUTURES_REALTIME_DATA.md
   STOCK_FUTURES_SIM_ACCOUNT_INTERFACES.md
-  MARKET_DATA_INPUTS.md
 requirements.txt
 start_guanlan_web.sh
 LICENSE
@@ -63,13 +61,6 @@ http://127.0.0.1:8768/push
 
 详细说明见：
 - [股票、期货模拟盘账号与接口说明](./docs/STOCK_FUTURES_SIM_ACCOUNT_INTERFACES.md)
-
-## 多源数据输入
-
-公开版里可以安全分享的是多路输入的角色分工、接入要求和工程取舍，而不是私有配置或生产环境参数。
-
-详细说明见：
-- [多源数据输入说明](./docs/MARKET_DATA_INPUTS.md)
 
 如果后续准备继续完善公开仓库，建议优先补这些内容：
 - 页面截图
