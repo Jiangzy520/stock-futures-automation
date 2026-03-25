@@ -2046,10 +2046,6 @@ def create_app(auto_connect: bool = True) -> Flask:
         provider = PUBLIC_PROVIDER_LABEL if PUBLIC_GITHUB_MODE else API_PROVIDER
         return render_template("push.html", api_provider=provider)
 
-    @app.get("/module/<slug>")
-    def module_page(slug: str) -> Any:
-        return redirect("/push", code=302)
-
     @app.get("/api/meta")
     def api_meta() -> Any:
         runtime = app.config["bridge"]

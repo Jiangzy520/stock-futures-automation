@@ -1681,10 +1681,6 @@ def create_app(auto_connect: bool = True) -> Flask:
         """仅展示实时策略推送的轻量页面。"""
         return render_template("push.html")
 
-    @app.get("/module/<slug>")
-    def module_page(slug: str) -> Any:
-        return redirect("/push", code=302)
-
     @app.get("/api/meta")
     def api_meta() -> Any:
         runtime = app.config["bridge"]
