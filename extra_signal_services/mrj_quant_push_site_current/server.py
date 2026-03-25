@@ -24,25 +24,12 @@ import sys
 from typing import Any
 from zoneinfo import ZoneInfo
 
-from flask import Flask, Response, jsonify, render_template, request, send_file, stream_with_context
+from flask import Flask, Response, jsonify, redirect, render_template, request, send_file, stream_with_context
 
 # Ensure project root is importable when launched as `python webapp/server.py`.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
-
-MODULES: dict[str, str] = {
-    "accounts": "账户管理",
-    "ai-settings": "AI 配置",
-    "portfolio-strategy": "组合策略",
-    "cta": "CTA 策略",
-    "script": "脚本策略",
-    "paper": "模拟交易",
-    "advisor": "辅助交易",
-    "chart": "实时图表",
-    "backtest": "策略回测",
-    "risk": "风控管理",
-}
 
 ALLTICK_MANAGER_DIR = PROJECT_ROOT / ".guanlan" / "alltick_manager"
 ALLTICK_DIR = PROJECT_ROOT / ".guanlan" / "alltick"
@@ -1687,7 +1674,7 @@ def create_app(auto_connect: bool = True) -> Flask:
 
     @app.get("/")
     def index() -> Any:
-        return render_template("index.html")
+        return redirect("/push", code=302)
 
     @app.get("/push")
     def push_page() -> Any:
@@ -1696,16 +1683,7 @@ def create_app(auto_connect: bool = True) -> Flask:
 
     @app.get("/module/<slug>")
     def module_page(slug: str) -> Any:
-        if slug not in MODULES:
-            return render_template("module.html", title="模块不存在", slug="", modules=MODULES), 404
-        runtime = app.config["bridge"]
-        return render_template(
-            "module.html",
-            title=MODULES[slug],
-            slug=slug,
-            modules=MODULES,
-            mode=runtime.mode.upper(),
-        )
+        return redirect("/push", code=302)
 
     @app.get("/api/meta")
     def api_meta() -> Any:
