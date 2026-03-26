@@ -12,6 +12,13 @@
 - 股票桥接页：https://dreamle.vip/bridge/
 - 推送配置页：https://dreamle.vip/notifications
 
+## 本次更改说明
+
+- 页面入口已统一到单 Flask 服务，不再依赖多端口分散启动。
+- 本地只需要启动一次 `webapp/server.py`，即可访问股票页、期货页、桥接页和通知页。
+- API 已按功能统一到 `realtime`、`bridge`、`notifications` 三组前缀，便于后续接 BigQuant 或其它数据源。
+- 旧接口 `/api/data`、`/api/futures`、`/api/futures-v2` 仍然保留，用于兼容已有脚本。
+
 ## 网站说明
 
 这套网站目前主要包含 4 个核心页面：

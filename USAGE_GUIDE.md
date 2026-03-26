@@ -6,11 +6,22 @@
 
 ## 1. 页面入口
 
-- 股票信号页：`http://127.0.0.1:18080/push`
-- 期货信号页：`http://127.0.0.1:18081/`
-- 股票桥接：`http://127.0.0.1:8792/`
-- 期货桥接：`http://127.0.0.1:8792/futures`
-- 推送配置：`http://127.0.0.1:8792/notifications`
+- 股票信号页：`http://127.0.0.1:8768/push`
+- 期货信号页：`http://127.0.0.1:8768/futures`
+- 股票桥接：`http://127.0.0.1:8768/bridge`
+- 期货桥接：`http://127.0.0.1:8768/bridge/futures`
+- 推送配置：`http://127.0.0.1:8768/notifications`
+
+当前公开版已经切到单 Flask 结构，本地只需要启动一个服务。
+
+## 1.1 API 统一管理
+
+- 统一页面入口：`/push`、`/futures`、`/bridge`、`/bridge/futures`、`/notifications`
+- 统一实时接口：`/api/realtime/*`
+- 统一桥接接口：`/api/bridge/stock`、`/api/bridge/futures`、`/api/bridge/futures-v2`
+- 统一通知接口：`/api/notifications/config`、`/api/notifications/test`、`/api/notifications/dispatch`
+- 健康检查接口：`/healthz`
+- 兼容旧接口：`/api/data`、`/api/futures`、`/api/futures-v2`
 
 ## 2. 三源切换
 
@@ -73,7 +84,7 @@
 统一接收接口：
 
 ```http
-POST http://127.0.0.1:8792/api/notifications/dispatch
+POST http://127.0.0.1:8768/api/notifications/dispatch
 ```
 
 ## 5. 当前通知中心做到哪一步
